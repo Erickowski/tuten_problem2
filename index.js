@@ -11,10 +11,12 @@ app.get("/", (req, res) => {
   res.send("Hola mundo");
 });
 
+const PORT = process.env.PORT || 4000;
+
 app.post("/", (req, res) => {
   res.send({ response: { time: req.body.time, timezone: "utc" } });
 });
 
-app.listen(3000, () => {
-  console.log("El servidor está funcionando en el puerto 3000");
+app.listen(PORT, () => {
+  console.log(`El servidor está funcionando en el puerto ${PORT}`);
 });
